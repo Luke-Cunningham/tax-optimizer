@@ -1,4 +1,5 @@
 import csv
+from secrets.config import SALARY, DEDUCTIONS
 
 def calculate_ca_state_tax(taxable_income):
     ca_tax_brackets = [
@@ -78,8 +79,8 @@ def calculate_metrics(salary, deductions, state, contribution_rate):
 
 
 def main():
-    salary = float(108000) # float(input("Enter your annual salary: "))
-    deductions = float(1440) # float(input("Enter your annual deductions: "))
+    salary = float(SALARY) # float(input("Enter your annual salary: "))
+    deductions = float(DEDUCTIONS) # float(input("Enter your annual deductions: "))
     state = "CA" # input("Enter your state (CO or CA): ")
 
     with open('401k_contributions.csv', mode='w', newline='') as file:
